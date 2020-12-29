@@ -2,7 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import Button from './Button';
 
+import { useSelector, useDispatch } from 'react-redux';
+import { completeTodo, removeTodo } from '../redux/todos/actions';
+
 const TodoListItem = ({ todo }) => {
+  const dispatch = useDispatch();
   return (
     <Wrapper>
       <Title>{todo.text}</Title>
@@ -10,11 +14,15 @@ const TodoListItem = ({ todo }) => {
 
       <ButtonGroup>
         {!todo.isCompleted && (
-          <Button color="primary" mr={8}>
+          <Button
+            onClick={() => dispatch(completeTodo(todo.id))}
+            color="primary"
+            mr={8}
+          >
             Complete
           </Button>
         )}
-        <Button>Remove</Button>
+        <Button onClick={() => dispatch(removeTodo(todo.id))}>Remove</Button>
       </ButtonGroup>
     </Wrapper>
   );

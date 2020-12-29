@@ -1,14 +1,25 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import styled from 'styled-components';
+import { createTodos } from '../redux/todos/actions';
 import Button from './Button';
 
 const NewTodoForm = () => {
+  const dispatch = useDispatch();
   const [inputValue, setInputValue] = useState('');
+
+  const addTodo = () => {
+    dispatch(createTodos(inputValue));
+
+    setInputValue('');
+  };
 
   return (
     <Wrapper>
       <Input
+        autoFocus
+        required
         value={inputValue}
         onChange={e => {
           setInputValue(e.target.value);
@@ -19,7 +30,11 @@ const NewTodoForm = () => {
         placeholder="Type your new todo here"
       />
 
-      <Button color="primary">Create Todo</Button>
+      {inputValue.length && (
+        <Button disabled={!inputValue.length} onClick={addTodo} color="primary">
+          Create Todo
+        </Button>
+      )}
     </Wrapper>
   );
 };

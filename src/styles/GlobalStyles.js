@@ -11,6 +11,7 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
     background: ${({ theme }) => theme.palette.background.default};
     color: ${({ theme }) => theme.palette.text.main};
+    /* transition: .6s  all ease; */
   }
 
   a {
