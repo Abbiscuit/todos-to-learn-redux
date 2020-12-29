@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
 
 import styled from 'styled-components';
-
-// const useStyles = makeStyles(theme => ({
-//   input: {
-//     height: '100%',
-//     flex: 1,
-//   },
-// }));
+import Button from './Button';
 
 const NewTodoForm = () => {
   const [inputValue, setInputValue] = useState('');
@@ -24,37 +18,31 @@ const NewTodoForm = () => {
         type="text"
         placeholder="Type your new todo here"
       />
-      <Button>Create Todo</Button>
+
+      <Button color="primary">Create Todo</Button>
     </Wrapper>
   );
 };
 
-const Input = styled.input``;
-
-const Button = styled.button`
-  display: inline-block;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 4px 16px;
-  font-size: 16px;
-  line-height: 24px;
-  border: none;
-  background-color: #dff4b0;
-
-  &:hover {
-    background-color: #aece6a;
-  }
-`;
-
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
+
+  background: #ffffff;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
+  color: #fff;
   width: 100%;
-  color: white;
   height: 72px;
   padding: 24px 20px;
   margin-bottom: 72px;
+`;
+
+const Input = styled.input`
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  line-height: 24px;
 `;
 
 export default NewTodoForm;

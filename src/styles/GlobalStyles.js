@@ -9,7 +9,18 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: 'Roboto', sans-serif;
-    background: #DEE3EB;
+    background: ${({ theme }) => theme.palette.background.default};
+    color: ${({ theme }) => theme.palette.text.main};
   }
 
+  a {
+    text-decoration: none;
+    color: ${({ theme }) => theme.palette.text.main};
+  }
+
+  button {
+    margin: 0;
+    border: none;
+    display: inline-block;
+  }
 `;
