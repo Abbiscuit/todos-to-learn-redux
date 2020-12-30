@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FcCheckmark, FcDocument } from 'react-icons/fc';
+
 import TodoListItem from './TodoListItem';
 
 const TodoList = ({ todos }) => {
@@ -9,14 +11,19 @@ const TodoList = ({ todos }) => {
   return (
     <Wrapper>
       <Col>
-        <Title>Incomplete: </Title>
+        <Title>
+          <FcDocument />
+          Incomplete:
+        </Title>
         {imcompletedTodos.map(todo => (
           <TodoListItem key={todo.id} todo={todo} />
         ))}
       </Col>
 
       <Col>
-        <Title>Completed: </Title>
+        <Title>
+          <FcCheckmark /> Completed:{' '}
+        </Title>
         {completedTodos.map(todo => (
           <TodoListItem key={todo.id} todo={todo} />
         ))}
@@ -30,18 +37,20 @@ const Wrapper = styled.section`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-
-  /*   
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between; */
 `;
 
 const Title = styled.h3`
+  display: flex;
+  align-items: center;
+
   font-weight: bold;
   font-size: 32px;
   line-height: 40px;
   margin-bottom: 8px;
+
+  svg {
+    margin-right: 8px;
+  }
 `;
 
 const Col = styled.div`

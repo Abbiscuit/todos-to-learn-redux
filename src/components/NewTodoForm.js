@@ -50,6 +50,11 @@ const Wrapper = styled.div`
   height: 72px;
   padding: 24px 20px;
   margin-bottom: 72px;
+  border-radius: 10px;
+
+  &:hover {
+    box-shadow: 0px 0px 20px rgba(172, 201, 248, 0.5);
+  }
 `;
 
 const Input = styled.input`

@@ -14,6 +14,7 @@ const Wrapper = styled.button`
   font-size: 16px;
   line-height: 24px;
   border: none;
+  border-radius: 10px;
   margin-right: ${({ mr }) => (mr ? mr : 0)}px;
   margin-bottom: ${({ mb }) => (mb ? mb : 0)}px;
   background-color: ${({ color, theme }) =>

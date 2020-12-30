@@ -8,10 +8,11 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter', sans-serif;
+
     background: ${({ theme }) => theme.palette.background.default};
     color: ${({ theme }) => theme.palette.text.main};
-    /* transition: .6s  all ease; */
+
   }
 
   a {

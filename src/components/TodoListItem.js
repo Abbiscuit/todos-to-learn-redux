@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Button from './Button';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { completeTodo, removeTodo } from '../redux/todos/actions';
 
 const TodoListItem = ({ todo }) => {
@@ -38,6 +38,8 @@ const Wrapper = styled.div`
   background-color: #fff;
   padding: 16px;
   margin-bottom: 10px;
+
+  border-radius: 5px;
 `;
 
 const Title = styled.h4`

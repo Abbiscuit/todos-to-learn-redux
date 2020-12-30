@@ -26,11 +26,4 @@ const Wrapper = styled.div`
   margin: 0 auto;
 `;
 
-const Title = styled.h3`
-  font-weight: bold;
-  font-size: 32px;
-  line-height: 40px;
-  margin-bottom: 8px;
-`;
-
 export default App;
