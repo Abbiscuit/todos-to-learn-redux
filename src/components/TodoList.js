@@ -3,10 +3,17 @@ import styled from 'styled-components';
 import { FcCheckmark, FcDocument } from 'react-icons/fc';
 
 import TodoListItem from './TodoListItem';
+import {
+  selectCompletedTodos,
+  selectIncompletedTodos,
+} from '../redux/todos/selectors';
+import { useSelector } from 'react-redux';
 
-const TodoList = ({ todos }) => {
-  const imcompletedTodos = todos.filter(todo => todo.isCompleted === false);
-  const completedTodos = todos.filter(todo => todo.isCompleted === true);
+const TodoList = () => {
+  // const imcompletedTodos = todos.filter(todo => todo.isCompleted === false);
+  // const completedTodos = todos.filter(todo => todo.isCompleted === true);
+  const imcompletedTodos = useSelector(selectIncompletedTodos);
+  const completedTodos = useSelector(selectCompletedTodos);
 
   return (
     <Wrapper>
